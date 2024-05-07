@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @Data
 @NoArgsConstructor
 public class MovieCinema extends BaseEntity{
-    @Column(columnDefinition = "TIMESTART")
+    @Column(columnDefinition = "TIMESTAMP")
     private LocalDateTime dateTime;
 
     @ManyToOne(fetch = FetchType.LAZY) //fetching is calling all the fields of the class,lazy means Movie object will be called only when called

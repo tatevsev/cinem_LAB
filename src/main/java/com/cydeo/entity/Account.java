@@ -1,15 +1,14 @@
 package com.cydeo.entity;
 
 import com.cydeo.enums.UserRole;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
 @NoArgsConstructor
 @Data
+@Table(name = "account_details")
 public class Account extends BaseEntity {
     private String name;
     private String address;
@@ -19,6 +18,8 @@ public class Account extends BaseEntity {
     private Integer age;
     private String postalCode;
     @Enumerated(EnumType.STRING)
-    private UserRole userRole;
+    private UserRole role;
+    @OneToOne(mappedBy = "account") //we don't have foreign key user_account_id in AccountDetails table therefore to drop it we mappedBy="account"
+    private User user;
 
 }

@@ -23,7 +23,7 @@ public class Movie extends BaseEntity {
     @Column(columnDefinition = "text") //if we don't use "text" , default will be var char 255 characters
     private String summary;
     @Enumerated(EnumType.STRING)
-    private MovieType tyoe;
+    private MovieType type;
     @Enumerated(EnumType.STRING)
     private MovieState state;
     private BigDecimal price;
