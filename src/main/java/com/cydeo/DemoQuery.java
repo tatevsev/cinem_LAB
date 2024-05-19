@@ -28,6 +28,12 @@ public class DemoQuery implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+
+        System.out.println(movieRepository.fetchAllMovieNames());
+        System.out.println(movieCinemaRepository.countAllByCinemaId(4L));
+        System.out.println(ticketRepository.fetchAllTicketsByUserAccount(4L));
+        System.out.println(ticketRepository.retrieveAllBySearchCriteria("it"));
+        System.out.println(userRepository.fetchAllUsers());
 //        System.out.println("----------------ACCOUNT-----------------------------------");
 //    System.out.println("findByCountyOrState :" + accountRepository.findByCountryOrState("United States","FL"));
 //    System.out.println(accountRepository.findByAgeLessThanEqual(50));
