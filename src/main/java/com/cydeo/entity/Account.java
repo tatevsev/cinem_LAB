@@ -2,11 +2,13 @@ package com.cydeo.entity;
 
 import com.cydeo.enums.UserRole;
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
 @NoArgsConstructor
+//@Setter
+//@Getter
+//@ToString
 @Data
 @Table(name = "account_details")
 public class Account extends BaseEntity {
@@ -19,7 +21,7 @@ public class Account extends BaseEntity {
     private String postalCode;
     @Enumerated(EnumType.STRING)
     private UserRole role;
-    @OneToOne(mappedBy = "account") //we don't have foreign key user_account_id in AccountDetails table therefore to drop it we mappedBy="account"
+    @OneToOne(mappedBy = "account")//we don't have foreign key user_account_id in AccountDetails table therefore to drop it we mappedBy="account"
     private User user;
 
 }

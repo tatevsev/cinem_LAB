@@ -1,11 +1,12 @@
 package com.cydeo.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
-@Data
+@Getter
+@Setter
+//@ToString
 @NoArgsConstructor
 @Table(name = "user_account")
 public class User extends BaseEntity{
