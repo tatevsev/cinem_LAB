@@ -72,6 +72,7 @@ public interface TicketRepository extends JpaRepository<Ticket, Long> {
             "OR m.name ILIKE concat('%',?1,'%') ",nativeQuery = true)
     List<Ticket> retrieveAllBySearchCriteria(@Param("searchCriteria") String searchCriteria);
 
+
 }
 /*
 
